@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 
 import { blogPosts, contentPages } from "@/data/catalog";
-import { footerLegalLinks, siteConfig } from "@/data/site";
+import { siteConfig } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const generatedAt = new Date();
   const staticPages = [
     "/",
     "/about-us/",
@@ -12,17 +13,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/faq/",
     "/blog/",
     "/html-sitemap/",
-    ...footerLegalLinks.map((item) => item.href),
   ].map((path) => ({
     url: `${siteConfig.siteUrl}${path}`,
-    lastModified: new Date(),
+    lastModified: generatedAt,
   }));
 
   const contentUrls = contentPages
     .filter((page) => !page.noindex)
     .map((page) => ({
-      url: `${siteConfig.siteUrl}/${page.slug}/`,
-      lastModified: new Date(),
+      url: `${siteConfig.siteUrl}${page.canonical ?? `/${page.slug}/`}`,
+      lastModified: generatedAt,
     }));
 
   const blogUrls = blogPosts.map((post) => ({

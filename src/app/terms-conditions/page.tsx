@@ -12,6 +12,7 @@ export default function TermsConditionsPage() {
     <LegalPageLayout
       title="Terms & Conditions"
       eyebrow="Legal"
+      path="/terms-conditions/"
       description="These terms explain how website content, packaging inquiries, and project approvals are handled by The Cereal Boxes."
       sections={[
         {

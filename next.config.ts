@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.thecerealboxes.com" }],
+        destination: "https://thecerealboxes.com/:path*",
+        permanent: true,
+      },
       { source: "/about", destination: "/about-us/", permanent: true },
       { source: "/contact", destination: "/contact-us/", permanent: true },
       { source: "/quote", destination: "/request-a-quote/", permanent: true },

@@ -12,6 +12,7 @@ export default function ShippingPolicyPage() {
     <LegalPageLayout
       title="Shipping Policy"
       eyebrow="Legal"
+      path="/shipping-policy/"
       description="This page explains how delivery timing and shipping expectations are handled for custom cereal packaging projects."
       sections={[
         {

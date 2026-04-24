@@ -12,6 +12,7 @@ export default function PrivacyPolicyPage() {
     <LegalPageLayout
       title="Privacy Policy"
       eyebrow="Legal"
+      path="/privacy-policy/"
       description="This policy explains how The Cereal Boxes handles website inquiries, quote form submissions, uploaded files, and related communication data."
       sections={[
         {

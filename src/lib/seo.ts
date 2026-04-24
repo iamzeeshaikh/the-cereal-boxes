@@ -6,6 +6,7 @@ type MetadataInput = {
   title: string;
   description: string;
   path?: string;
+  canonicalPath?: string;
   keywords?: string[];
   noindex?: boolean;
   image?: string;
@@ -16,12 +17,14 @@ export function createMetadata({
   title,
   description,
   path = "/",
+  canonicalPath,
   keywords = [],
   noindex = false,
   image = "/og-default.jpg",
   imageAlt = "The Cereal Boxes premium custom cereal packaging",
 }: MetadataInput): Metadata {
   const url = new URL(path, siteConfig.siteUrl).toString();
+  const canonicalUrl = new URL(canonicalPath ?? path, siteConfig.siteUrl).toString();
   const imageUrl = new URL(image, siteConfig.siteUrl).toString();
 
   return {
@@ -29,7 +32,7 @@ export function createMetadata({
     description,
     keywords,
     alternates: {
-      canonical: url,
+      canonical: canonicalUrl,
     },
     robots: {
       index: !noindex,
@@ -54,6 +57,7 @@ export function createMetadata({
       title,
       description,
       images: [imageUrl],
+      site: "@thecerealboxes",
     },
   };
 }
@@ -108,6 +112,27 @@ export function buildLocalBusinessSchema() {
     areaServed: {
       "@type": "Country",
       name: "United States",
+    },
+  };
+}
+
+export function buildWebsiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteConfig.siteUrl}/#website`,
+    name: siteConfig.name,
+    url: siteConfig.siteUrl,
+    description: siteConfig.description,
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.siteUrl,
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteConfig.siteUrl}/blog/?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
     },
   };
 }

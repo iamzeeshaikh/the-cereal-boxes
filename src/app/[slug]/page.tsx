@@ -28,6 +28,7 @@ export async function generateMetadata({
     title: page.metaTitle,
     description: page.metaDescription,
     path: `/${page.slug}/`,
+    canonicalPath: page.canonical,
     keywords: page.keywordTargets,
     noindex: page.noindex,
     image: page.image,
@@ -57,7 +58,7 @@ export default async function DynamicContentPage({
       name: page.kind === "guide" ? "Resources" : "Cereal Boxes",
       path: page.kind === "guide" ? "/blog/" : "/cereal-boxes/",
     },
-    { name: page.title, path: `/${page.slug}/` },
+    { name: page.title, path: page.canonical ?? `/${page.slug}/` },
   ]);
 
   const faqSchema = buildFaqSchema(buildExpandedFaqs(page));
@@ -66,12 +67,12 @@ export default async function DynamicContentPage({
       ? buildServiceSchema({
           name: page.title,
           description: page.metaDescription,
-          path: `/${page.slug}/`,
+          path: page.canonical ?? `/${page.slug}/`,
         })
       : buildProductSchema({
           name: page.title,
           description: page.metaDescription,
-          path: `/${page.slug}/`,
+          path: page.canonical ?? `/${page.slug}/`,
           image: page.image,
           category: "Custom cereal packaging",
           additionalProperty: page.specs.map((item) => ({

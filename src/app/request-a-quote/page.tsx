@@ -2,7 +2,7 @@ import { QuoteForm } from "@/components/forms/quote-form";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/page-hero";
-import { createMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Request A Quote | Custom Cereal Boxes",
@@ -12,6 +12,11 @@ export const metadata = createMetadata({
 });
 
 export default function RequestQuotePage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Request a Quote", path: "/request-a-quote/" },
+  ]);
+
   return (
     <>
       <PageHero
@@ -80,6 +85,10 @@ export default function RequestQuotePage() {
           </div>
         </Container>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
     </>
   );
 }

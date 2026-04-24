@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/page-hero";
 import { contactCards, siteConfig, trustHighlights } from "@/data/site";
-import { createMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "About The Cereal Boxes | Premium Custom Packaging Company",
@@ -13,6 +13,11 @@ export const metadata = createMetadata({
 });
 
 export default function AboutUsPage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about-us/" },
+  ]);
+
   return (
     <>
       <PageHero
@@ -126,6 +131,10 @@ export default function AboutUsPage() {
           </div>
         </Container>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
     </>
   );
 }

@@ -12,6 +12,7 @@ export default function RefundReturnsPolicyPage() {
     <LegalPageLayout
       title="Refund / Returns Policy"
       eyebrow="Legal"
+      path="/refund-returns-policy/"
       description="Because cereal packaging is usually produced to custom specifications, refund and return requests are reviewed according to project approvals and confirmed order details."
       sections={[
         {

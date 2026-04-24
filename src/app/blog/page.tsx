@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/page-hero";
 import { blogPosts } from "@/data/catalog";
-import { createMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Blog And Resources | The Cereal Boxes",
@@ -15,6 +15,11 @@ export const metadata = createMetadata({
 });
 
 export default function BlogIndexPage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+  ]);
+
   return (
     <>
       <PageHero
@@ -66,6 +71,10 @@ export default function BlogIndexPage() {
           </div>
         </Container>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
     </>
   );
 }

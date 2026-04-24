@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/page-hero";
 import { contactCards, siteConfig } from "@/data/site";
-import { createMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Contact Us | The Cereal Boxes",
@@ -13,6 +13,11 @@ export const metadata = createMetadata({
 });
 
 export default function ContactUsPage() {
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Contact Us", path: "/contact-us/" },
+  ]);
+
   return (
     <>
       <PageHero
@@ -83,6 +88,10 @@ export default function ContactUsPage() {
           </div>
         </Container>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
     </>
   );
 }

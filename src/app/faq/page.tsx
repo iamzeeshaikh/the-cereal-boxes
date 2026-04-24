@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/page-hero";
 import { contentPages } from "@/data/catalog";
 import { homepageFaqs } from "@/data/site";
-import { buildFaqSchema, createMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildFaqSchema, createMetadata } from "@/lib/seo";
 
 const faqItems = [...homepageFaqs, ...contentPages.slice(0, 6).flatMap((page) => page.faq)].slice(0, 12);
 
@@ -17,6 +17,10 @@ export const metadata = createMetadata({
 
 export default function FAQPage() {
   const faqSchema = buildFaqSchema(faqItems);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "FAQ", path: "/faq/" },
+  ]);
 
   return (
     <>
@@ -50,6 +54,10 @@ export default function FAQPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
     </>
   );
