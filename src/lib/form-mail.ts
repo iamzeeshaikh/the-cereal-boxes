@@ -2,7 +2,19 @@ import { siteConfig } from "@/data/site";
 
 export type FormType = "contact" | "lead" | "quote";
 
-export const FORM_RECIPIENT = siteConfig.email;
+const DEFAULT_FORM_RECIPIENT = "shanzeeshan571@gmail.com";
+
+export function getFormRecipient(formType: FormType) {
+  if (formType === "quote") {
+    return (
+      process.env.QUOTE_FORM_RECIPIENT?.trim() ||
+      process.env.FORM_RECIPIENT?.trim() ||
+      DEFAULT_FORM_RECIPIENT
+    );
+  }
+
+  return process.env.FORM_RECIPIENT?.trim() || DEFAULT_FORM_RECIPIENT || siteConfig.email;
+}
 
 type FormPayload = Record<string, string>;
 

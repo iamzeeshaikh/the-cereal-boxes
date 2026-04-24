@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import {
   buildFormEmailHtml,
   buildFormEmailText,
-  FORM_RECIPIENT,
+  getFormRecipient,
   getFormSubject,
   type FormType,
 } from "@/lib/form-mail";
@@ -74,6 +74,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Invalid form request." }, { status: 400 });
     }
 
+    const recipient = getFormRecipient(formType);
+
     const apiKey = process.env.RESEND_API_KEY;
     const fromEmail =
       process.env.RESEND_FROM_EMAIL || "The Cereal Boxes <onboarding@resend.dev>";
@@ -98,7 +100,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         from: fromEmail,
-        to: [FORM_RECIPIENT],
+        to: [recipient],
         subject: getFormSubject(formType, payload),
         html: buildFormEmailHtml(formType, payload),
         text: buildFormEmailText(formType, payload),
