@@ -16,6 +16,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://thecerealboxes.com"),
   applicationName: "The Cereal Boxes",
+  verification: {
+    google: "9VlD3mpeTIxZewZjG9Z01Nbhr-z09YWWuwrGUCR7Nao",
+  },
   ...createMetadata({
     title: "The Cereal Boxes | Premium Custom Cereal Boxes In The USA",
     description:
