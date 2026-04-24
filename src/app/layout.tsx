@@ -16,6 +16,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://thecerealboxes.com"),
   applicationName: "The Cereal Boxes",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   verification: {
     google: "9VlD3mpeTIxZewZjG9Z01Nbhr-z09YWWuwrGUCR7Nao",
   },
