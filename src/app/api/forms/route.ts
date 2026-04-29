@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 import {
   buildFormEmailHtml,
@@ -75,6 +76,48 @@ export async function POST(request: Request) {
     }
 
     const recipient = getFormRecipient(formType);
+    const senderReplyEmail = payload.email?.trim();
+    const subject = getFormSubject(formType, payload);
+    const html = buildFormEmailHtml(formType, payload);
+    const text = buildFormEmailText(formType, payload);
+
+    const smtpHost = process.env.SMTP_HOST?.trim();
+    const smtpPort = Number(process.env.SMTP_PORT || "587");
+    const smtpSecure = process.env.SMTP_SECURE === "true";
+    const smtpUser = process.env.SMTP_USER?.trim();
+    const smtpPass = process.env.SMTP_PASS?.trim();
+    const smtpFrom =
+      process.env.SMTP_FROM_EMAIL?.trim() ||
+      (smtpUser ? `The Cereal Boxes <${smtpUser}>` : undefined);
+
+    if (smtpHost && smtpUser && smtpPass && smtpFrom) {
+      const transporter = nodemailer.createTransport({
+        host: smtpHost,
+        port: smtpPort,
+        secure: smtpSecure,
+        auth: {
+          user: smtpUser,
+          pass: smtpPass,
+        },
+      });
+
+      await transporter.sendMail({
+        from: smtpFrom,
+        to: recipient,
+        subject,
+        html,
+        text,
+        replyTo: senderReplyEmail || undefined,
+        attachments: attachments?.map((file) => ({
+          filename: file.filename,
+          content: file.content,
+          encoding: "base64",
+          contentType: file.type,
+        })),
+      });
+
+      return NextResponse.json({ success: true, provider: "smtp" });
+    }
 
     const apiKey = process.env.RESEND_API_KEY;
     const fromEmail =
@@ -84,13 +127,12 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           error:
-            "Email delivery is not configured yet. Add RESEND_API_KEY to enable form sending.",
+            "Email delivery is not configured yet. Add SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS or configure RESEND_API_KEY.",
         },
         { status: 500 },
       );
     }
 
-    const senderReplyEmail = payload.email?.trim();
     const resendResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -101,9 +143,9 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         from: fromEmail,
         to: [recipient],
-        subject: getFormSubject(formType, payload),
-        html: buildFormEmailHtml(formType, payload),
-        text: buildFormEmailText(formType, payload),
+        subject,
+        html,
+        text,
         reply_to: senderReplyEmail ? [senderReplyEmail] : undefined,
         attachments,
       }),
