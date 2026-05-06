@@ -10,6 +10,7 @@ import type { ContentPage } from "@/data/catalog";
 import { buildExpandedFaqs } from "@/data/catalog";
 
 const trustPoints = ["Low MOQ", "Free Design Support", "Fast Turnaround"];
+const startingPrice = "$1.00";
 
 export function ContentPageView({
   page,
@@ -21,6 +22,7 @@ export function ContentPageView({
   const expandedFaqs = buildExpandedFaqs(page);
   const specRows = buildSpecRows(page);
   const gallery = buildGallery(page);
+  const showStartingPrice = page.kind === "product";
   const showProductEnhancements =
     page.kind === "product" || page.kind === "category" || page.kind === "service";
 
@@ -54,6 +56,19 @@ export function ContentPageView({
                   appeal, reliable production planning, and a cereal packaging partner that can
                   support both launch-stage projects and repeat wholesale orders.
                 </p>
+                {showStartingPrice ? (
+                  <div className="mt-5 inline-flex flex-wrap items-center gap-3 rounded-[20px] border border-[rgba(21,36,58,0.08)] bg-[var(--color-shell)] px-4 py-3">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-muted)]">
+                      Starting at
+                    </span>
+                    <span className="text-2xl font-semibold text-[var(--color-ink)]">
+                      {startingPrice}
+                    </span>
+                    <span className="text-sm leading-7 text-[var(--color-muted)]">
+                      per unit for custom cereal packaging quote requests
+                    </span>
+                  </div>
+                ) : null}
                 <div className="mt-7 flex flex-wrap gap-3">
                   <Button href="/request-a-quote/" variant="secondary">
                     Request a Quote

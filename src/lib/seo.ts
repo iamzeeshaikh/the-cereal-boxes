@@ -191,6 +191,26 @@ export function buildProductSchema(input: {
       "@type": "Organization",
       name: siteConfig.name,
     },
+    offers: {
+      "@type": "Offer",
+      url: new URL(input.path, siteConfig.siteUrl).toString(),
+      priceCurrency: "USD",
+      price: "1.00",
+      priceValidUntil: "2027-12-31",
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
+      seller: {
+        "@type": "Organization",
+        name: siteConfig.name,
+        url: siteConfig.siteUrl,
+      },
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "US",
+        returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+        url: `${siteConfig.siteUrl}/refund-returns-policy/`,
+      },
+    },
     additionalProperty: input.additionalProperty?.map((item) => ({
       "@type": "PropertyValue",
       name: item.name,

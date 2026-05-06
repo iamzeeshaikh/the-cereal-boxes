@@ -5,6 +5,7 @@ import { buildExpandedFaqs, contentPages, getContentPageBySlug } from "@/data/ca
 import {
   buildBreadcrumbSchema,
   buildFaqSchema,
+  buildProductSchema,
   buildServiceSchema,
   createMetadata,
 } from "@/lib/seo";
@@ -61,11 +62,24 @@ export default async function DynamicContentPage({
   ]);
 
   const faqSchema = buildFaqSchema(buildExpandedFaqs(page));
-  const commerceSchema = buildServiceSchema({
-    name: page.title,
-    description: page.metaDescription,
-    path: page.canonical ?? `/${page.slug}/`,
-  });
+  const commerceSchema =
+    page.kind === "product"
+      ? buildProductSchema({
+          name: page.title,
+          description: page.metaDescription,
+          path: page.canonical ?? `/${page.slug}/`,
+          image: page.image,
+          category: "Custom cereal packaging",
+          additionalProperty: page.specs.map((item) => ({
+            name: item.label,
+            value: item.value,
+          })),
+        })
+      : buildServiceSchema({
+          name: page.title,
+          description: page.metaDescription,
+          path: page.canonical ?? `/${page.slug}/`,
+        });
 
   return (
     <>
