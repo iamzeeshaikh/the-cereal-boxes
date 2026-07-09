@@ -178,36 +178,6 @@ export function ContentPageView({
                     ))}
                   </div>
                 </div>
-
-                <div className="surface-card p-7 sm:p-9">
-                  <h2 className="text-3xl text-[var(--color-ink)] sm:text-4xl">
-                    Custom vs blank cereal boxes
-                  </h2>
-                  <div className="mt-6 grid gap-4 md:grid-cols-2">
-                    <div className="rounded-[24px] border border-[rgba(21,36,58,0.08)] bg-white p-5">
-                      <h3 className="text-2xl text-[var(--color-ink)]">Custom printed cereal boxes</h3>
-                      <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
-                        Best when branding, shelf presence, and stronger retail conversion matter.
-                        See{" "}
-                        <Link href="/custom-printed-cereal-boxes/" className="micro-link">
-                          Custom Printed Cereal Boxes
-                        </Link>{" "}
-                        for a deeper print-focused breakdown.
-                      </p>
-                    </div>
-                    <div className="rounded-[24px] border border-[rgba(21,36,58,0.08)] bg-white p-5">
-                      <h3 className="text-2xl text-[var(--color-ink)]">Blank cereal boxes</h3>
-                      <p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">
-                        Best for labels, warehouse use, private label flexibility, and shorter-run
-                        testing. Compare with{" "}
-                        <Link href="/blank-cereal-boxes/" className="micro-link">
-                          Blank Cereal Boxes
-                        </Link>{" "}
-                        if you need a simpler outer carton.
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </>
             ) : null}
 
@@ -226,6 +196,19 @@ export function ContentPageView({
                       </li>
                     ))}
                   </ul>
+                ) : null}
+                {section.links?.length ? (
+                  <p className="mt-5 text-sm leading-7 text-[var(--color-muted)]">
+                    Related:{" "}
+                    {section.links.map((link, index) => (
+                      <span key={link.href}>
+                        {index > 0 ? ", " : ""}
+                        <Link href={link.href} className="micro-link">
+                          {link.label}
+                        </Link>
+                      </span>
+                    ))}
+                  </p>
                 ) : null}
               </div>
             ))}
