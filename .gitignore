@@ -5,3 +5,6 @@ node_modules
 .env.local
 .vercel
 zeepack-assets
+
+._*
+.AppleDouble
