@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,6 +12,27 @@ import { buildExpandedFaqs } from "@/data/catalog";
 
 const trustPoints = ["Low MOQ", "Free Design Support", "Fast Turnaround"];
 const startingPrice = "$1.00";
+
+// Render section body text, turning inline [anchor](/slug/) markers into
+// contextual internal links so links sit naturally inside the prose.
+function renderBody(body: string) {
+  const parts: ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\((\/[a-z0-9/-]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+  while ((match = regex.exec(body)) !== null) {
+    if (match.index > lastIndex) parts.push(body.slice(lastIndex, match.index));
+    parts.push(
+      <Link key={key++} href={match[2]} className="micro-link">
+        {match[1]}
+      </Link>,
+    );
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < body.length) parts.push(body.slice(lastIndex));
+  return parts;
+}
 
 export function ContentPageView({
   page,
@@ -184,7 +206,7 @@ export function ContentPageView({
             {page.sections.map((section) => (
               <div key={section.title} className="surface-card p-7 sm:p-9">
                 <h2 className="text-3xl text-[var(--color-ink)] sm:text-4xl">{section.title}</h2>
-                <p className="mt-4 text-base leading-8 text-[var(--color-muted)]">{section.body}</p>
+                <p className="mt-4 text-base leading-8 text-[var(--color-muted)]">{renderBody(section.body)}</p>
                 {section.bullets?.length ? (
                   <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                     {section.bullets.map((bullet) => (
@@ -196,19 +218,6 @@ export function ContentPageView({
                       </li>
                     ))}
                   </ul>
-                ) : null}
-                {section.links?.length ? (
-                  <p className="mt-5 text-sm leading-7 text-[var(--color-muted)]">
-                    Related:{" "}
-                    {section.links.map((link, index) => (
-                      <span key={link.href}>
-                        {index > 0 ? ", " : ""}
-                        <Link href={link.href} className="micro-link">
-                          {link.label}
-                        </Link>
-                      </span>
-                    ))}
-                  </p>
                 ) : null}
               </div>
             ))}

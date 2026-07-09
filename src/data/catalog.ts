@@ -21,7 +21,6 @@ export type ContentPage = {
     title: string;
     body: string;
     bullets?: string[];
-    links?: Array<{ href: string; label: string }>;
   }>;
   specs: Array<{ label: string; value: string }>;
   faq: FAQ[];
@@ -117,7 +116,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "How the cereal box range fits together",
         body:
-          "This hub connects every format we produce, from printed retail cartons to blank cartons, mini promo packs, and colour-specific runs. Most brands start here to compare where their product sits before narrowing to a single format and moving into artwork and quoting.",
+          "This hub connects every format we produce, from printed retail cartons to blank cartons, mini promo packs, and colour-specific runs. Most brands start here to compare where their product sits before narrowing to a single format and moving into artwork and quoting. Brands that want branding-led runs usually move on to our [custom printed cereal boxes](/custom-printed-cereal-boxes/).",
       },
       {
         title: "Freshness and structure planning",
@@ -127,15 +126,11 @@ export const contentPages: ContentPage[] = [
       {
         title: "Where brands take it next",
         body:
-          "Once the format is set, the common next steps are locking print specs, choosing a board grade, and planning quantity tiers. Explore Custom Printed Cereal Boxes for branding-led runs or Wholesale Cereal Boxes for repeat volume planning.",
+          "Once the format is set, the common next steps are locking print specs, choosing a board grade, and planning quantity tiers. Explore Custom Printed Cereal Boxes for branding-led runs or Wholesale Cereal Boxes for repeat volume planning. For steady repeat volume, the next step is planning a [wholesale cereal box programme](/wholesale-cereal-boxes/).",
         bullets: [
           "Compare formats before committing artwork",
           "Plan inner bag and outer carton together",
           "Move to printing or wholesale once format is set",
-        ],
-        links: [
-          { href: "/custom-printed-cereal-boxes/", label: "Custom Printed Cereal Boxes" },
-          { href: "/wholesale-cereal-boxes/", label: "Wholesale Cereal Boxes" },
         ],
       },
     ],
@@ -190,7 +185,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Getting print-ready artwork right",
         body:
-          "Printed cereal packaging lives or dies on file setup. We work from press-ready artwork with correct bleed, safe zones around the tuck and glue flaps, and CMYK or Pantone builds so the colour you approve is the colour that ships. Free dieline templates keep panel layout accurate from the first draft.",
+          "Printed cereal packaging lives or dies on file setup. We work from press-ready artwork with correct bleed, safe zones around the tuck and glue flaps, and CMYK or Pantone builds so the colour you approve is the colour that ships. Free dieline templates keep panel layout accurate from the first draft. Bold, saturated palettes are explored in more depth on our [custom colourful cereal boxes](/custom-colorful-cereal-boxes/) page.",
       },
       {
         title: "Finishes that lift perceived value",
@@ -200,11 +195,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Colour consistency across reorders",
         body:
-          "Brands that reprint every few months care most about repeatability. We store approved colour targets and print settings so batch two matches batch one, which matters when a printed cereal box sits next to older stock on the same shelf.",
-        links: [
-          { href: "/custom-colorful-cereal-boxes/", label: "Custom Colorful Cereal Boxes" },
-          { href: "/customization-printing-options/", label: "Customization And Printing Options" },
-        ],
+          "Brands that reprint every few months care most about repeatability. We store approved colour targets and print settings so batch two matches batch one, which matters when a printed cereal box sits next to older stock on the same shelf. The full set of print treatments is laid out under [customization and printing options](/customization-printing-options/).",
       },
     ],
     specs: [
@@ -257,7 +248,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Built around food-contact realities",
         body:
-          "Breakfast cereal cartons pair with a food-safe inner liner rather than contacting product directly, so the board grade is chosen for print quality and rigidity while the bag handles freshness. We advise on that split so the packaging is compliant and practical for a food workflow.",
+          "Breakfast cereal cartons pair with a food-safe inner liner rather than contacting product directly, so the board grade is chosen for print quality and rigidity while the bag handles freshness. We advise on that split so the packaging is compliant and practical for a food workflow. Board grades and coatings for food packaging are detailed in our [materials and finishes](/materials-finishes/) guide.",
       },
       {
         title: "Panels that carry the label load",
@@ -267,11 +258,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Formats for every breakfast segment",
         body:
-          "Family cereal, single-serve, organic granola, and kid-focused packs each need a different size and tone. The structure and board can be tuned to the segment so a premium granola feels premium and a value family pack stays cost-efficient.",
-        links: [
-          { href: "/materials-finishes/", label: "Materials And Finishes" },
-          { href: "/custom-printed-cereal-boxes/", label: "Custom Printed Cereal Boxes" },
-        ],
+          "Family cereal, single-serve, organic granola, and kid-focused packs each need a different size and tone. The structure and board can be tuned to the segment so a premium granola feels premium and a value family pack stays cost-efficient. The buyers and segments these serve are covered under [industries and uses](/industries-uses/).",
       },
     ],
     specs: [
@@ -323,7 +310,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Why brands choose unprinted cartons",
         body:
-          "Blank cereal boxes suit teams that apply their own labels, run short test batches, or need neutral stock for private-label fulfilment. You get the correct structure and board without committing to a print run, which keeps small or uncertain launches low-risk.",
+          "Blank cereal boxes suit teams that apply their own labels, run short test batches, or need neutral stock for private-label fulfilment. You get the correct structure and board without committing to a print run, which keeps small or uncertain launches low-risk. If you want the same unprinted approach with a cleaner aesthetic, compare [plain cereal boxes](/plain-cereal-boxes/).",
       },
       {
         title: "Label-ready surfaces",
@@ -333,11 +320,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Scaling from blank to printed later",
         body:
-          "Many brands start blank to validate a product, then move to printed once volume justifies it. Because the dieline stays the same, the jump to Custom Printed Cereal Boxes is straightforward with no structural rework.",
-        links: [
-          { href: "/plain-cereal-boxes/", label: "Plain Cereal Boxes" },
-          { href: "/empty-cereal-boxes/", label: "Empty Cereal Boxes" },
-        ],
+          "Many brands start blank to validate a product, then move to printed once volume justifies it. Because the dieline stays the same, the jump to Custom Printed Cereal Boxes is straightforward with no structural rework. For fill-your-own and packing use, [empty cereal boxes](/empty-cereal-boxes/) are the closest match.",
       },
     ],
     specs: [
@@ -383,7 +366,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Plain does not mean basic",
         body:
-          "Even with an understated exterior, a plain carton can still be engineered around your cereal size, insert needs, and fulfilment process. The look stays intentionally clean while the structure does the practical work of protection and shelf stacking.",
+          "Even with an understated exterior, a plain carton can still be engineered around your cereal size, insert needs, and fulfilment process. The look stays intentionally clean while the structure does the practical work of protection and shelf stacking. Teams applying their own labels often weigh these against [blank cereal boxes](/blank-cereal-boxes/).",
       },
       {
         title: "Where a plain carton wins",
@@ -393,11 +376,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Material choices for a clean look",
         body:
-          "A plain finish reads best on natural kraft or a clean uncoated white. We help pick the stock that matches the aesthetic while still holding fill weight and surviving transit without scuffing.",
-        links: [
-          { href: "/blank-cereal-boxes/", label: "Blank Cereal Boxes" },
-          { href: "/brown-cereal-boxes/", label: "Brown Cereal Boxes" },
-        ],
+          "A plain finish reads best on natural kraft or a clean uncoated white. We help pick the stock that matches the aesthetic while still holding fill weight and surviving transit without scuffing. For a natural, wholesome look on the same clean structure, our [brown and kraft cereal boxes](/brown-cereal-boxes/) fit well.",
       },
     ],
     specs: [
@@ -444,7 +423,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Sized for sampling and promotions",
         body:
-          "Mini cereal boxes are built for single-serve sampling, variety multipacks, hotel and event giveaways, and promotional runs. The reduced footprint keeps cost per unit low so you can hand out or bundle large quantities without the freight of full-size cartons.",
+          "Mini cereal boxes are built for single-serve sampling, variety multipacks, hotel and event giveaways, and promotional runs. The reduced footprint keeps cost per unit low so you can hand out or bundle large quantities without the freight of full-size cartons. For a slightly larger retail format, compare these with [small cereal boxes](/small-cereal-boxes/).",
       },
       {
         title: "Small format, full branding",
@@ -454,11 +433,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Multipack and display planning",
         body:
-          "Minis rarely ship alone. We plan case packs and display-ready trays so a variety pack or counter display assembles cleanly and merchandises well, which matters for promotional and impulse placements.",
-        links: [
-          { href: "/small-cereal-boxes/", label: "Small Cereal Boxes" },
-          { href: "/limited-edition-cereal-boxes/", label: "Limited Edition Cereal Boxes" },
-        ],
+          "Minis rarely ship alone. We plan case packs and display-ready trays so a variety pack or counter display assembles cleanly and merchandises well, which matters for promotional and impulse placements. Promotional runs often pair minis with a themed [limited edition cereal box](/limited-edition-cereal-boxes/).",
       },
     ],
     specs: [
@@ -499,7 +474,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "A right-sized retail format",
         body:
-          "Small cereal boxes bridge the gap between mini promo packs and full family cartons. They suit single-person households, on-the-go retail, and specialty cereals where a smaller pack size matches how the product actually gets bought and eaten.",
+          "Small cereal boxes bridge the gap between mini promo packs and full family cartons. They suit single-person households, on-the-go retail, and specialty cereals where a smaller pack size matches how the product actually gets bought and eaten. For sampling and giveaways at an even smaller size, see [mini cereal boxes](/mini-cereal-boxes/).",
       },
       {
         title: "Fill efficiency at a smaller scale",
@@ -509,11 +484,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Shelf presence without bulk",
         body:
-          "A smaller pack has to earn its place next to larger competitors. Strong front-panel hierarchy and a confident colour block keep a small cereal box visible in a section dominated by bigger cartons.",
-        links: [
-          { href: "/mini-cereal-boxes/", label: "Mini Cereal Boxes" },
-          { href: "/12-oz-cereal-box/", label: "12 oz Cereal Box" },
-        ],
+          "A smaller pack has to earn its place next to larger competitors. Strong front-panel hierarchy and a confident colour block keep a small cereal box visible in a section dominated by bigger cartons. Brands working to a set retail weight often choose a [12 oz cereal box](/12-oz-cereal-box/) instead.",
       },
     ],
     specs: [
@@ -554,7 +525,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "A defined-weight retail carton",
         body:
-          "The 12 oz cereal box is a common mid-weight retail size that balances shelf presence with a sensible price point. It suits mainstream cereals and granolas where buyers expect a familiar pack size rather than an oversized or single-serve format.",
+          "The 12 oz cereal box is a common mid-weight retail size that balances shelf presence with a sensible price point. It suits mainstream cereals and granolas where buyers expect a familiar pack size rather than an oversized or single-serve format. For a more compact single-serve option, compare with [small cereal boxes](/small-cereal-boxes/).",
       },
       {
         title: "Dieline tuned to 12 oz fill",
@@ -564,11 +535,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Consistent sizing for reorders",
         body:
-          "A defined weight format makes reordering predictable. Once the 12 oz dieline is locked, repeat runs and case-pack counts stay consistent, which simplifies warehouse planning and retailer conversations.",
-        links: [
-          { href: "/small-cereal-boxes/", label: "Small Cereal Boxes" },
-          { href: "/standard-cereal-packaging/", label: "Standard Cereal Packaging" },
-        ],
+          "A defined weight format makes reordering predictable. Once the 12 oz dieline is locked, repeat runs and case-pack counts stay consistent, which simplifies warehouse planning and retailer conversations. This size fits neatly into a wider [standard cereal packaging](/standard-cereal-packaging/) programme.",
       },
     ],
     specs: [
@@ -609,7 +576,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "The gable structure and its appeal",
         body:
-          "A gable-top carton adds a distinctive peaked shape with a built-in handle feel, which stands out in a category dominated by flat rectangular boxes. It suits premium, gift, and specialty cereal that wants a structural point of difference on shelf.",
+          "A gable-top carton adds a distinctive peaked shape with a built-in handle feel, which stands out in a category dominated by flat rectangular boxes. It suits premium, gift, and specialty cereal that wants a structural point of difference on shelf. For a more conventional flat carton, see our [cardboard cereal box](/cardboard-cereal-box/) format.",
       },
       {
         title: "Where gable formats perform",
@@ -619,11 +586,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Print and structure together",
         body:
-          "The angled top panels change how artwork wraps, so we plan the print layout around the fold geometry to keep logos and messaging aligned across the peak rather than breaking awkwardly at the seams.",
-        links: [
-          { href: "/cardboard-cereal-box/", label: "Cardboard Cereal Box" },
-          { href: "/limited-edition-cereal-boxes/", label: "Limited Edition Cereal Boxes" },
-        ],
+          "The angled top panels change how artwork wraps, so we plan the print layout around the fold geometry to keep logos and messaging aligned across the peak rather than breaking awkwardly at the seams. The premium silhouette also suits [limited edition cereal boxes](/limited-edition-cereal-boxes/) and gifting runs.",
       },
     ],
     specs: [
@@ -664,7 +627,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Everyday cardboard cartons that hold up",
         body:
-          "A cardboard cereal box is the practical workhorse of retail packaging: rigid enough to protect product, light enough to keep freight sensible, and printable enough to carry a real brand. We build it around durability and honest shelf presence.",
+          "A cardboard cereal box is the practical workhorse of retail packaging: rigid enough to protect product, light enough to keep freight sensible, and printable enough to carry a real brand. We build it around durability and honest shelf presence. The board grades and their trade-offs are explained in our [materials and finishes](/materials-finishes/) guide.",
       },
       {
         title: "Board grade decisions",
@@ -674,11 +637,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Recyclability and messaging",
         body:
-          "Paperboard cartons recycle through standard kerbside streams, which is worth communicating on-pack. We help place recycling and sustainability cues where they support the brand without cluttering the primary selling panel.",
-        links: [
-          { href: "/materials-finishes/", label: "Materials And Finishes" },
-          { href: "/standard-cereal-packaging/", label: "Standard Cereal Packaging" },
-        ],
+          "Paperboard cartons recycle through standard kerbside streams, which is worth communicating on-pack. We help place recycling and sustainability cues where they support the brand without cluttering the primary selling panel. For the familiar retail format built on this board, see [standard cereal packaging](/standard-cereal-packaging/).",
       },
     ],
     specs: [
@@ -772,7 +731,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Packaging made personal",
         body:
-          "Personalised cereal boxes carry names, photos, event dates, or one-off messaging for gifts, celebrations, brand activations, and campaigns. The appeal is that each carton feels made for the recipient rather than mass-produced.",
+          "Personalised cereal boxes carry names, photos, event dates, or one-off messaging for gifts, celebrations, brand activations, and campaigns. The appeal is that each carton feels made for the recipient rather than mass-produced. For campaign and collector runs, these pair naturally with [limited edition cereal boxes](/limited-edition-cereal-boxes/).",
       },
       {
         title: "Short-run and variable data",
@@ -782,11 +741,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Occasions that drive demand",
         body:
-          "Birthdays, weddings, corporate gifting, and influencer campaigns are the common triggers. We help plan turnaround around the event date so personalised packs arrive with time to spare before the moment they are made for.",
-        links: [
-          { href: "/limited-edition-cereal-boxes/", label: "Limited Edition Cereal Boxes" },
-          { href: "/custom-colorful-cereal-boxes/", label: "Custom Colorful Cereal Boxes" },
-        ],
+          "Birthdays, weddings, corporate gifting, and influencer campaigns are the common triggers. We help plan turnaround around the event date so personalised packs arrive with time to spare before the moment they are made for. Vivid one-off designs also draw on our [custom colourful cereal boxes](/custom-colorful-cereal-boxes/) work.",
       },
     ],
     specs: [
@@ -827,7 +782,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Colour as a shelf weapon",
         body:
-          "Vivid, saturated colour is one of the fastest ways to win attention in a busy cereal aisle. Custom colourful cartons lean into bold blocking and high-contrast palettes so the pack reads from a distance and pulls the eye before the shopper reads a word.",
+          "Vivid, saturated colour is one of the fastest ways to win attention in a busy cereal aisle. Custom colourful cartons lean into bold blocking and high-contrast palettes so the pack reads from a distance and pulls the eye before the shopper reads a word. For a single dominant hue, see colour-specific options such as [red cereal boxes](/red-cereal-boxes/).",
       },
       {
         title: "Holding vivid colour on press",
@@ -837,11 +792,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Colour that still communicates",
         body:
-          "Bold does not have to mean chaotic. We keep a clear hierarchy under the colour so the flavour, brand, and key claim stay legible, which stops a vibrant pack from becoming visually noisy at shelf.",
-        links: [
-          { href: "/red-cereal-boxes/", label: "Red Cereal Boxes" },
-          { href: "/custom-printed-cereal-boxes/", label: "Custom Printed Cereal Boxes" },
-        ],
+          "Bold does not have to mean chaotic. We keep a clear hierarchy under the colour so the flavour, brand, and key claim stay legible, which stops a vibrant pack from becoming visually noisy at shelf. The underlying print process is covered on our [custom printed cereal boxes](/custom-printed-cereal-boxes/) page.",
       },
     ],
     specs: [
@@ -882,7 +833,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Empty cartons for fulfilment and craft",
         body:
-          "Empty cereal boxes serve fill-your-own operations, subscription and gift packing, craft and classroom projects, and display use. You get the finished carton structure ready to fill, without product or printed branding you do not need.",
+          "Empty cereal boxes serve fill-your-own operations, subscription and gift packing, craft and classroom projects, and display use. You get the finished carton structure ready to fill, without product or printed branding you do not need. If you plan to add your own printing later, [blank cereal boxes](/blank-cereal-boxes/) are the natural next step.",
       },
       {
         title: "Ready-to-fill structure",
@@ -892,11 +843,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Neutral stock, flexible use",
         body:
-          "Because they are unbranded, empty cartons double as blank canvases for labels, stamps, or hand decoration, making them useful well beyond a single cereal product line.",
-        links: [
-          { href: "/blank-cereal-boxes/", label: "Blank Cereal Boxes" },
-          { href: "/plain-cereal-boxes/", label: "Plain Cereal Boxes" },
-        ],
+          "Because they are unbranded, empty cartons double as blank canvases for labels, stamps, or hand decoration, making them useful well beyond a single cereal product line. For a cleaner minimalist exterior, compare with [plain cereal boxes](/plain-cereal-boxes/).",
       },
     ],
     specs: [
@@ -937,7 +884,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "The premium of a black carton",
         body:
-          "Black cereal packaging reads as premium, bold, and modern, which is why it suits high-end granola, protein cereal, and design-led brands. A dark base makes metallic and bright accents pop, giving the pack a confident, upscale presence.",
+          "Black cereal packaging reads as premium, bold, and modern, which is why it suits high-end granola, protein cereal, and design-led brands. A dark base makes metallic and bright accents pop, giving the pack a confident, upscale presence. Bright accents on a dark base are explored further in our [custom colourful cereal boxes](/custom-colorful-cereal-boxes/) range.",
       },
       {
         title: "Printing rich, even black",
@@ -947,11 +894,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Accents that lift the dark base",
         body:
-          "Foil, spot UV, and bright flavour cues do their best work against black. We plan those accents so the carton feels premium and intentional rather than simply dark.",
-        links: [
-          { href: "/red-cereal-boxes/", label: "Red Cereal Boxes" },
-          { href: "/custom-colorful-cereal-boxes/", label: "Custom Colorful Cereal Boxes" },
-        ],
+          "Foil, spot UV, and bright flavour cues do their best work against black. We plan those accents so the carton feels premium and intentional rather than simply dark. For another high-impact single colour, see [red cereal boxes](/red-cereal-boxes/).",
       },
     ],
     specs: [
@@ -992,7 +935,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Blue and the breakfast shelf",
         body:
-          "Blue signals trust, freshness, and calm, and it has a long association with breakfast and dairy cues. A blue cereal carton fits family cereals, healthy positioning, and brands that want an approachable, dependable feel on shelf.",
+          "Blue signals trust, freshness, and calm, and it has a long association with breakfast and dairy cues. A blue cereal carton fits family cereals, healthy positioning, and brands that want an approachable, dependable feel on shelf. For a health-forward alternative colour, [green cereal boxes](/green-cereal-box/) send a similar signal.",
       },
       {
         title: "Matching a specific brand blue",
@@ -1002,11 +945,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Contrast for legibility",
         body:
-          "Text and flavour cues need enough contrast against a blue field to stay readable. We tune the palette so key information reads cleanly without fighting the blue base.",
-        links: [
-          { href: "/green-cereal-box/", label: "Green Cereal Box" },
-          { href: "/custom-colorful-cereal-boxes/", label: "Custom Colorful Cereal Boxes" },
-        ],
+          "Text and flavour cues need enough contrast against a blue field to stay readable. We tune the palette so key information reads cleanly without fighting the blue base. Multi-colour builds are covered on our [custom colourful cereal boxes](/custom-colorful-cereal-boxes/) page.",
       },
     ],
     specs: [
@@ -1047,7 +986,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Brown, kraft, and the natural cue",
         body:
-          "Brown and kraft-toned cartons communicate natural, wholesome, and sustainable positioning instantly. They suit organic granola, high-fibre cereals, and brands whose story is about simple, honest ingredients.",
+          "Brown and kraft-toned cartons communicate natural, wholesome, and sustainable positioning instantly. They suit organic granola, high-fibre cereals, and brands whose story is about simple, honest ingredients. For an equally natural but brighter cue, compare with [green cereal boxes](/green-cereal-box/).",
       },
       {
         title: "Printing on kraft vs coated brown",
@@ -1057,11 +996,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Keeping earthy without looking dull",
         body:
-          "Natural palettes can go flat if not handled well. We add controlled contrast and a clear focal point so a brown carton feels intentional and premium rather than muddy.",
-        links: [
-          { href: "/green-cereal-box/", label: "Green Cereal Box" },
-          { href: "/materials-finishes/", label: "Materials And Finishes" },
-        ],
+          "Natural palettes can go flat if not handled well. We add controlled contrast and a clear focal point so a brown carton feels intentional and premium rather than muddy. The kraft and coated board options are detailed in our [materials and finishes](/materials-finishes/) guide.",
       },
     ],
     specs: [
@@ -1102,7 +1037,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Green and the health signal",
         body:
-          "Green is the shorthand for natural, organic, and better-for-you, making it a natural fit for wholegrain, plant-based, and health-forward cereals. A green carton sets expectations before the shopper reads a single claim.",
+          "Green is the shorthand for natural, organic, and better-for-you, making it a natural fit for wholegrain, plant-based, and health-forward cereals. A green carton sets expectations before the shopper reads a single claim. For a warmer natural tone, our [brown and kraft cereal boxes](/brown-cereal-boxes/) share the same positioning.",
       },
       {
         title: "Shades that change the message",
@@ -1112,11 +1047,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Backing up the green with substance",
         body:
-          "A green pack invites scrutiny of the claims. We lay out certifications, ingredient cues, and sustainability messaging so the packaging supports the health promise the colour makes.",
-        links: [
-          { href: "/brown-cereal-boxes/", label: "Brown Cereal Boxes" },
-          { href: "/blue-cereal-boxes/", label: "Blue Cereal Boxes" },
-        ],
+          "A green pack invites scrutiny of the claims. We lay out certifications, ingredient cues, and sustainability messaging so the packaging supports the health promise the colour makes. For a fresher, trust-led palette, see [blue cereal boxes](/blue-cereal-boxes/).",
       },
     ],
     specs: [
@@ -1157,7 +1088,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Red for appetite and energy",
         body:
-          "Red is the appetite colour: it drives urgency, energy, and impulse, which is why so many mainstream and kid-focused cereals use it. A red carton competes hard for attention in a crowded breakfast section.",
+          "Red is the appetite colour: it drives urgency, energy, and impulse, which is why so many mainstream and kid-focused cereals use it. A red carton competes hard for attention in a crowded breakfast section. Multi-colour and high-impact builds are covered on our [custom colourful cereal boxes](/custom-colorful-cereal-boxes/) page.",
       },
       {
         title: "Controlling a demanding colour",
@@ -1167,11 +1098,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Balancing energy with clarity",
         body:
-          "Red grabs attention but can overwhelm. We keep the brand and flavour cues clear against the red so the pack converts attention into recognition rather than just noise.",
-        links: [
-          { href: "/custom-colorful-cereal-boxes/", label: "Custom Colorful Cereal Boxes" },
-          { href: "/black-cereal-boxes/", label: "Black Cereal Boxes" },
-        ],
+          "Red grabs attention but can overwhelm. We keep the brand and flavour cues clear against the red so the pack converts attention into recognition rather than just noise. For a premium high-contrast alternative, see [black cereal boxes](/black-cereal-boxes/).",
       },
     ],
     specs: [
@@ -1212,7 +1139,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Packaging built for the moment",
         body:
-          "Limited-edition cereal boxes support seasonal drops, collaborations, anniversaries, and collector runs. The packaging itself becomes part of the appeal, so the design can take bolder swings than an everyday core carton.",
+          "Limited-edition cereal boxes support seasonal drops, collaborations, anniversaries, and collector runs. The packaging itself becomes part of the appeal, so the design can take bolder swings than an everyday core carton. Seasonal drops often start with a themed format like our [Halloween cereal boxes](/halloween-cereal-boxes/).",
       },
       {
         title: "Short-run economics",
@@ -1222,11 +1149,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Finishes that signal special",
         body:
-          "Foil, spot UV, numbered panels, and unusual colourways all tell the shopper this is not the standard pack. We match those cues to the campaign so the limited edition feels genuinely distinct on shelf.",
-        links: [
-          { href: "/halloween-cereal-boxes/", label: "Halloween Cereal Boxes" },
-          { href: "/personalized-cereal-boxes/", label: "Personalized Cereal Boxes" },
-        ],
+          "Foil, spot UV, numbered panels, and unusual colourways all tell the shopper this is not the standard pack. We match those cues to the campaign so the limited edition feels genuinely distinct on shelf. For one-to-one runs with names or photos, see [personalized cereal boxes](/personalized-cereal-boxes/).",
       },
     ],
     specs: [
@@ -1267,7 +1190,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Seasonal packaging with impact",
         body:
-          "Halloween cereal boxes turn a core product into a seasonal event with themed colour, characters, and playful structure. Strong seasonal packaging drives impulse buys and display placement during a short, high-traffic window.",
+          "Halloween cereal boxes turn a core product into a seasonal event with themed colour, characters, and playful structure. Strong seasonal packaging drives impulse buys and display placement during a short, high-traffic window. Other short-run special editions are covered under [limited edition cereal boxes](/limited-edition-cereal-boxes/).",
       },
       {
         title: "Timing the seasonal run",
@@ -1277,11 +1200,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Themed design that still sells cereal",
         body:
-          "The fun theme has to sit on top of a working cereal pack. We keep the brand, flavour, and information clear under the Halloween styling so the seasonal look supports sales rather than burying them.",
-        links: [
-          { href: "/limited-edition-cereal-boxes/", label: "Limited Edition Cereal Boxes" },
-          { href: "/custom-colorful-cereal-boxes/", label: "Custom Colorful Cereal Boxes" },
-        ],
+          "The fun theme has to sit on top of a working cereal pack. We keep the brand, flavour, and information clear under the Halloween styling so the seasonal look supports sales rather than burying them. The bold themed colour draws on our [custom colourful cereal boxes](/custom-colorful-cereal-boxes/) work.",
       },
     ],
     specs: [
@@ -1322,7 +1241,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "The freshness layer inside the box",
         body:
-          "Cereal mylar bags are the barrier component that keeps product fresh inside or alongside a carton. The metallised film blocks moisture, oxygen, and light, protecting texture and shelf life far better than a plain liner.",
+          "Cereal mylar bags are the barrier component that keeps product fresh inside or alongside a carton. The metallised film blocks moisture, oxygen, and light, protecting texture and shelf life far better than a plain liner. The outer carton side of the system is covered under [standard cereal packaging](/standard-cereal-packaging/).",
       },
       {
         title: "Bag and box as one system",
@@ -1332,11 +1251,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Printing and resealing options",
         body:
-          "Mylar bags can ship plain as an inner liner or printed for stand-alone retail, with resealable zippers for multi-serve products. We match the format to whether the bag is hidden inside a carton or facing the shopper directly.",
-        links: [
-          { href: "/standard-cereal-packaging/", label: "Standard Cereal Packaging" },
-          { href: "/wholesale-cereal-boxes/", label: "Wholesale Cereal Boxes" },
-        ],
+          "Mylar bags can ship plain as an inner liner or printed for stand-alone retail, with resealable zippers for multi-serve products. We match the format to whether the bag is hidden inside a carton or facing the shopper directly. For repeat-volume planning of the full bag-and-box system, see [wholesale cereal boxes](/wholesale-cereal-boxes/).",
       },
     ],
     specs: [
@@ -1377,7 +1292,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "The dependable default format",
         body:
-          "Standard cereal packaging covers the familiar rectangular carton plus inner bag that shoppers recognise instantly. It is the low-risk, cost-efficient default for brands that want proven structure without reinventing the format.",
+          "Standard cereal packaging covers the familiar rectangular carton plus inner bag that shoppers recognise instantly. It is the low-risk, cost-efficient default for brands that want proven structure without reinventing the format. The inner freshness layer is covered on our [cereal mylar bags](/cereal-mylar-bags/) page.",
       },
       {
         title: "Why standard still works",
@@ -1387,11 +1302,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Where to customise within standard",
         body:
-          "Even inside a standard footprint, board grade, finish, and print can all be tuned. We help decide where to invest so the carton stays cost-efficient while still feeling like your brand rather than a template.",
-        links: [
-          { href: "/cereal-mylar-bags/", label: "Cereal Mylar Bags" },
-          { href: "/12-oz-cereal-box/", label: "12 oz Cereal Box" },
-        ],
+          "Even inside a standard footprint, board grade, finish, and print can all be tuned. We help decide where to invest so the carton stays cost-efficient while still feeling like your brand rather than a template. A common defined size within this format is the [12 oz cereal box](/12-oz-cereal-box/).",
       },
     ],
     specs: [
@@ -1432,7 +1343,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Planning for repeat volume",
         body:
-          "Wholesale cereal box production is about predictable cost and supply across repeat runs. We plan quantity tiers, board sourcing, and reprint schedules so a growing brand keeps consistent stock without renegotiating every order.",
+          "Wholesale cereal box production is about predictable cost and supply across repeat runs. We plan quantity tiers, board sourcing, and reprint schedules so a growing brand keeps consistent stock without renegotiating every order. Most wholesale programmes start from our main [custom cereal boxes](/cereal-boxes/) hub.",
       },
       {
         title: "Price breaks and MOQ tiers",
@@ -1442,11 +1353,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Consistency across large runs",
         body:
-          "At volume, consistency is everything. Stored colour targets and locked dielines keep every wholesale run matching the last, so cartons from different batches look identical on the same shelf.",
-        links: [
-          { href: "/cereal-boxes/", label: "Custom Cereal Boxes" },
-          { href: "/industries-uses/", label: "Industries And Uses" },
-        ],
+          "At volume, consistency is everything. Stored colour targets and locked dielines keep every wholesale run matching the last, so cartons from different batches look identical on the same shelf. The range of buyers we produce at volume for is outlined under [industries and uses](/industries-uses/).",
       },
     ],
     specs: [
@@ -1493,7 +1400,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "The full print toolkit",
         body:
-          "This covers the print and customisation choices available across our cereal cartons: CMYK and Pantone colour, inside print, pattern printing, and messaging layouts built around barcodes, nutrition panels, and promotional callouts.",
+          "This covers the print and customisation choices available across our cereal cartons: CMYK and Pantone colour, inside print, pattern printing, and messaging layouts built around barcodes, nutrition panels, and promotional callouts. The materials these print processes run on are covered in our [materials and finishes](/materials-finishes/) guide.",
       },
       {
         title: "Choosing options by goal",
@@ -1503,11 +1410,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "From artwork to approved proof",
         body:
-          "Customisation runs on solid file setup. We work from press-ready artwork with correct bleed and safe zones, then provide a proof so colour and layout are approved before anything runs on press.",
-        links: [
-          { href: "/materials-finishes/", label: "Materials And Finishes" },
-          { href: "/custom-printed-cereal-boxes/", label: "Custom Printed Cereal Boxes" },
-        ],
+          "Customisation runs on solid file setup. We work from press-ready artwork with correct bleed and safe zones, then provide a proof so colour and layout are approved before anything runs on press. To see these options on a live product, visit [custom printed cereal boxes](/custom-printed-cereal-boxes/).",
       },
     ],
     specs: [
@@ -1548,7 +1451,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Board grades explained",
         body:
-          "This covers the materials behind our cartons: SBS paperboard for clean print and rigidity, natural kraft for a sustainable look, and cardboard grades tuned to fill weight and stacking. The right board depends on product, storage, and positioning.",
+          "This covers the materials behind our cartons: SBS paperboard for clean print and rigidity, natural kraft for a sustainable look, and cardboard grades tuned to fill weight and stacking. The right board depends on product, storage, and positioning. How these materials are printed is covered under [customization and printing options](/customization-printing-options/).",
       },
       {
         title: "Finishes and what they signal",
@@ -1558,11 +1461,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Sustainability considerations",
         body:
-          "Material choice drives recyclability and brand story. We help select recyclable paperboard and communicate it clearly on-pack, balancing environmental goals with the print quality and durability the product needs.",
-        links: [
-          { href: "/customization-printing-options/", label: "Customization And Printing Options" },
-          { href: "/cardboard-cereal-box/", label: "Cardboard Cereal Box" },
-        ],
+          "Material choice drives recyclability and brand story. We help select recyclable paperboard and communicate it clearly on-pack, balancing environmental goals with the print quality and durability the product needs. For a specific everyday format built on these boards, see our [cardboard cereal box](/cardboard-cereal-box/).",
       },
     ],
     specs: [
@@ -1603,7 +1502,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Who uses custom cereal packaging",
         body:
-          "Beyond mainstream cereal brands, our cartons serve granola makers, health and protein brands, private-label retailers, hospitality and hotels, subscription boxes, and promotional campaigns, each with its own structural and print needs.",
+          "Beyond mainstream cereal brands, our cartons serve granola makers, health and protein brands, private-label retailers, hospitality and hotels, subscription boxes, and promotional campaigns, each with its own structural and print needs. Repeat-volume buyers are handled through our [wholesale cereal boxes](/wholesale-cereal-boxes/) programme.",
       },
       {
         title: "Matching format to industry",
@@ -1613,11 +1512,7 @@ export const contentPages: ContentPage[] = [
       {
         title: "Scaling across use cases",
         body:
-          "Many brands span several of these uses at once, from retail to promotional to gifting. We plan a coherent packaging system so the same brand reads consistently whether it ships in a full carton, a mini pack, or a mylar bag.",
-        links: [
-          { href: "/wholesale-cereal-boxes/", label: "Wholesale Cereal Boxes" },
-          { href: "/custom-breakfast-cereal-boxes/", label: "Custom Breakfast Cereal Boxes" },
-        ],
+          "Many brands span several of these uses at once, from retail to promotional to gifting. We plan a coherent packaging system so the same brand reads consistently whether it ships in a full carton, a mini pack, or a mylar bag. Food-specific requirements are covered on our [custom breakfast cereal boxes](/custom-breakfast-cereal-boxes/) page.",
       },
     ],
     specs: [
