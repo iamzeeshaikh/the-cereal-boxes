@@ -3,8 +3,14 @@ import type { MetadataRoute } from "next";
 import { blogPosts, contentPages } from "@/data/catalog";
 import { siteConfig } from "@/data/site";
 
+// Stable last-modified date for static and content pages. Bump this when content
+// is materially updated. Using a fixed date instead of new Date() stops every
+// URL's lastmod resetting on each build, which Google learns to distrust. Blog
+// posts keep their own real publish dates below.
+const LASTMOD = new Date("2026-07-09");
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const generatedAt = new Date();
+  const generatedAt = LASTMOD;
   const staticPages = [
     "/",
     "/about-us/",
