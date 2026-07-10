@@ -9,6 +9,25 @@ import { PageHero } from "@/components/ui/page-hero";
 import { blogPosts, getBlogPostBySlug, getContentPageBySlug } from "@/data/catalog";
 import { buildBreadcrumbSchema, buildFaqSchema, createMetadata } from "@/lib/seo";
 
+// Render inline [anchor](/path) markdown links in body copy as internal links.
+function renderRichText(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, index) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return part;
+    const [, label, href] = match;
+    return (
+      <Link
+        key={index}
+        href={href}
+        className="font-semibold text-[var(--color-accent)] underline underline-offset-2"
+      >
+        {label}
+      </Link>
+    );
+  });
+}
+
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
@@ -81,7 +100,7 @@ export default async function BlogPostPage({
                 <div className="mt-4 grid gap-4">
                   {section.paragraphs.map((paragraph) => (
                     <p key={paragraph} className="text-base leading-8 text-[var(--color-muted)]">
-                      {paragraph}
+                      {renderRichText(paragraph)}
                     </p>
                   ))}
                 </div>
@@ -89,7 +108,7 @@ export default async function BlogPostPage({
                   <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                     {section.bullets.map((bullet) => (
                       <li key={bullet} className="rounded-[20px] bg-[var(--color-shell)] px-4 py-4 text-sm leading-7 text-[var(--color-ink)]">
-                        {bullet}
+                        {renderRichText(bullet)}
                       </li>
                     ))}
                   </ul>
