@@ -37,6 +37,7 @@ export const navigation = [
   { label: "Mini Small", href: "/mini-cereal-boxes/" },
   { label: "Specialty Theme", href: "/limited-edition-cereal-boxes/" },
   { label: "Mylar Bags", href: "/cereal-mylar-bags/" },
+  { label: "Locations", href: "/locations/" },
   { label: "Blog", href: "/blog/" },
   { label: "Contact", href: "/contact-us/" },
 ];

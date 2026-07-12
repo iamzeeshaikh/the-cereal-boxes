@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { blogPosts, contentPages } from "@/data/catalog";
+import { locationStates } from "@/data/locations";
 import { siteConfig } from "@/data/site";
 
 // Stable last-modified date for static and content pages. Bump this when content
@@ -36,5 +37,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.publishedAt),
   }));
 
-  return [...staticPages, ...contentUrls, ...blogUrls];
+  const locationUrls = [
+    { url: `${siteConfig.siteUrl}/locations/`, lastModified: generatedAt },
+    ...locationStates.flatMap((state) => [
+      { url: `${siteConfig.siteUrl}/locations/${state.slug}/`, lastModified: generatedAt },
+      ...state.cities.map((city) => ({
+        url: `${siteConfig.siteUrl}/locations/${state.slug}/${city.slug}/`,
+        lastModified: generatedAt,
+      })),
+    ]),
+  ];
+
+  return [...staticPages, ...contentUrls, ...locationUrls, ...blogUrls];
 }
