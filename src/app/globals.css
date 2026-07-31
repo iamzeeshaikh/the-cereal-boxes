@@ -82,3 +82,16 @@
     @apply grid gap-6 md:grid-cols-2 xl:grid-cols-3;
   }
 }
+
+/* Mobile safety net: grid and flex children shrink to their column instead of
+   pushing the page wider than the viewport. */
+@layer base {
+  .grid > *,
+  .flex > * {
+    min-width: 0;
+  }
+
+  table {
+    max-width: 100%;
+  }
+}

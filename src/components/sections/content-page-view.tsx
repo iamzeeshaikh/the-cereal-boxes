@@ -127,12 +127,36 @@ export function ContentPageView({
         </Container>
       </section>
 
-      {showProductEnhancements ? (
-        <BoxConfigurator productName={page.title} config={cerealConfiguratorConfig} />
-      ) : null}
+      <section className="pb-12">
+        <Container className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-start">
+          <ProductQuickForm productName={page.title} title="Get a Fast Packaging Quote" />
+          <div className="surface-card p-6 sm:p-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--color-muted)]">
+              Why Brands Choose Us
+            </p>
+            <CheckList
+              className="mt-4"
+              items={[
+                "Low minimums for new cereal product launches",
+                "Premium retail printing and finishing options",
+                "Custom sizes, shapes, inserts, and structural guidance",
+                "Wholesale-friendly planning for repeat packaging runs",
+              ]}
+            />
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button href="/request-a-quote/" variant="secondary">
+                Request a Quote
+              </Button>
+              <Button href="/contact-us/" variant="ghost">
+                Talk to Packaging Expert
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </section>
 
       <section className="pb-16">
-        <Container className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_360px]">
+        <Container className="grid min-w-0 gap-10">
           <div className="grid min-w-0 gap-10">
             <div className="surface-card p-7 sm:p-9">
               <h2 className="text-3xl text-[var(--color-ink)] sm:text-4xl">
@@ -219,7 +243,17 @@ export function ContentPageView({
                 ) : null}
               </div>
             ))}
+          </div>
+        </Container>
+      </section>
 
+      {showProductEnhancements ? (
+        <BoxConfigurator productName={page.title} config={cerealConfiguratorConfig} />
+      ) : null}
+
+      <section className="pb-16">
+        <Container className="grid min-w-0 gap-10">
+          <div className="grid min-w-0 gap-10">
             <div className="surface-card p-7 sm:p-9">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div>
@@ -303,24 +337,6 @@ export function ContentPageView({
                   Talk to Packaging Expert
                 </Button>
               </div>
-            </div>
-          </div>
-
-          <div className="grid gap-6">
-            <ProductQuickForm productName={page.title} title="Get a Fast Packaging Quote" />
-            <div className="surface-card p-6">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--color-muted)]">
-                Why Brands Choose Us
-              </p>
-              <CheckList
-                className="mt-4"
-                items={[
-                  "Low minimums for new cereal product launches",
-                  "Premium retail printing and finishing options",
-                  "Custom sizes, shapes, inserts, and structural guidance",
-                  "Wholesale-friendly planning for repeat packaging runs",
-                ]}
-              />
             </div>
           </div>
         </Container>

@@ -124,7 +124,7 @@ export function ProductQuickForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="mt-5 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-6 text-sm font-semibold text-white shadow-[0_18px_30px_rgba(232,96,58,0.24)] transition hover:-translate-y-0.5 disabled:opacity-70"
+        className="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-6 text-sm font-semibold text-white shadow-[0_18px_30px_rgba(232,96,58,0.24)] transition hover:-translate-y-0.5 disabled:opacity-70 sm:w-auto"
       >
         {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : null}
         {isSubmitting ? "Sending…" : "Get Custom Quote"}
