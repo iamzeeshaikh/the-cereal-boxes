@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Check, ChevronRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { Container } from "@/components/ui/container";
@@ -111,7 +112,7 @@ export default async function StateLocationPage({
           <div className="rounded-2xl border border-[var(--color-border)] bg-white p-6 shadow-sm">
             <p className="border-b border-[var(--color-border)] pb-3 text-base font-bold text-[var(--color-ink)]">▸ {state.stat}</p>
             <ul className="mt-3 space-y-2.5 text-sm text-[var(--color-ink)]">
-              {state.cities.map((c) => (<li key={c.slug} className="flex items-start gap-2"><span className="text-[var(--color-accent)]">▸</span>{c.name}, {state.abbr}</li>))}
+              {state.cities.map((c) => (<li key={c.slug} className="flex items-start gap-2"><ChevronRight className="mt-1.5 h-3.5 w-3.5 flex-none text-[var(--color-accent)]" strokeWidth={3} aria-hidden />{c.name}, {state.abbr}</li>))}
             </ul>
           </div>
         </Container>
@@ -142,7 +143,7 @@ export default async function StateLocationPage({
             {whoLine.pre}<Link href={L[1].href} className="font-semibold text-[var(--color-accent)] underline">{L[1].text}</Link>{whoLine.post}
           </p>
           <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
-            {state.industries.map((i) => (<li key={i} className="flex items-start gap-2 text-[var(--color-ink)]"><span className="text-[var(--color-accent)]">✓</span>{i}</li>))}
+            {state.industries.map((i) => (<li key={i} className="flex items-start gap-2 text-[var(--color-ink)]"><Check className="mt-1.5 h-3.5 w-3.5 flex-none text-[var(--color-accent)]" strokeWidth={3} aria-hidden />{i}</li>))}
           </ul>
         </Container>
       </section>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Check } from "lucide-react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
@@ -107,8 +108,11 @@ export default async function BlogPostPage({
                 {section.bullets?.length ? (
                   <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                     {section.bullets.map((bullet) => (
-                      <li key={bullet} className="rounded-[20px] bg-[var(--color-shell)] px-4 py-4 text-sm leading-7 text-[var(--color-ink)]">
-                        {renderRichText(bullet)}
+                      <li key={bullet} className="flex items-start gap-3 rounded-[20px] bg-[var(--color-shell)] px-4 py-4 text-sm leading-7 text-[var(--color-ink)]">
+                        <span aria-hidden className="mt-1 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-[var(--color-accent)]/12 text-[var(--color-accent)]">
+                          <Check className="h-3.5 w-3.5" strokeWidth={3} />
+                        </span>
+                        <span className="min-w-0">{renderRichText(bullet)}</span>
                       </li>
                     ))}
                   </ul>

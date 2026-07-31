@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Check, ChevronRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { Container } from "@/components/ui/container";
@@ -136,7 +137,7 @@ export default async function CityLocationPage({
             <p className="border-b border-[var(--color-border)] pb-3 text-base font-bold text-[var(--color-ink)]">▸ {city.stat}</p>
             <ul className="mt-3 space-y-2.5 text-sm text-[var(--color-ink)]">
               {["Printed to your dieline & specs", "Food-grade & recyclable board options", "Retail-ready: panels, barcodes, finishes", "Free proof · low minimums"].map((t) => (
-                <li key={t} className="flex items-start gap-2"><span className="text-[var(--color-accent)]">✓</span>{t}</li>
+                <li key={t} className="flex items-start gap-2"><Check className="mt-1.5 h-3.5 w-3.5 flex-none text-[var(--color-accent)]" strokeWidth={3} aria-hidden />{t}</li>
               ))}
             </ul>
           </div>
@@ -232,7 +233,7 @@ export default async function CityLocationPage({
           </p>
           <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
             {useCases.map((u) => (
-              <li key={u} className="flex items-start gap-2 text-[var(--color-ink)]"><span className="text-[var(--color-accent)]">▸</span>{u}</li>
+              <li key={u} className="flex items-start gap-2 text-[var(--color-ink)]"><ChevronRight className="mt-1.5 h-3.5 w-3.5 flex-none text-[var(--color-accent)]" strokeWidth={3} aria-hidden />{u}</li>
             ))}
           </ul>
         </Container>
@@ -246,7 +247,7 @@ export default async function CityLocationPage({
           <p className="mt-4 leading-relaxed text-[var(--color-muted)]">{city.deliveryNote}</p>
           <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
             {["Printed to your exact dieline", "Food-grade & recyclable board options", "Retail-ready panels, barcodes & finishes", "Free proof on every order", "Low minimums with bulk pricing", "Fast turnaround & nationwide shipping"].map((t) => (
-              <li key={t} className="flex items-start gap-2 text-[var(--color-ink)]"><span className="text-[var(--color-accent)]">✓</span>{t}</li>
+              <li key={t} className="flex items-start gap-2 text-[var(--color-ink)]"><Check className="mt-1.5 h-3.5 w-3.5 flex-none text-[var(--color-accent)]" strokeWidth={3} aria-hidden />{t}</li>
             ))}
           </ul>
           <p className="mt-4 leading-relaxed text-[var(--color-muted)]">

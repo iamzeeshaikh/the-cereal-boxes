@@ -2,9 +2,12 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { LeadForm } from "@/components/forms/lead-form";
+import { ProductQuickForm } from "@/components/forms/product-quick-form";
+import { BoxConfigurator } from "@/components/sections/box-configurator";
+import { cerealConfiguratorConfig } from "@/data/configurator";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { Button } from "@/components/ui/button";
+import { CheckList } from "@/components/ui/check-list";
 import { Container } from "@/components/ui/container";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
 import type { ContentPage } from "@/data/catalog";
@@ -124,9 +127,13 @@ export function ContentPageView({
         </Container>
       </section>
 
+      {showProductEnhancements ? (
+        <BoxConfigurator productName={page.title} config={cerealConfiguratorConfig} />
+      ) : null}
+
       <section className="pb-16">
         <Container className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_360px]">
-          <div className="grid gap-10">
+          <div className="grid min-w-0 gap-10">
             <div className="surface-card p-7 sm:p-9">
               <h2 className="text-3xl text-[var(--color-ink)] sm:text-4xl">
                 Specifications
@@ -135,7 +142,7 @@ export function ContentPageView({
                 Use this table as a quick planning snapshot for {page.title.toLowerCase()} before
                 requesting a quote.
               </p>
-              <div className="mt-6 overflow-hidden rounded-[24px] border border-[rgba(21,36,58,0.08)]">
+              <div className="mt-6 overflow-x-auto rounded-[24px] border border-[rgba(21,36,58,0.08)]">
                 <table className="w-full border-collapse text-left">
                   <tbody>
                     {specRows.map((row, index) => (
@@ -208,16 +215,7 @@ export function ContentPageView({
                 <h2 className="text-3xl text-[var(--color-ink)] sm:text-4xl">{section.title}</h2>
                 <p className="mt-4 text-base leading-8 text-[var(--color-muted)]">{renderBody(section.body)}</p>
                 {section.bullets?.length ? (
-                  <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                    {section.bullets.map((bullet) => (
-                      <li
-                        key={bullet}
-                        className="rounded-[20px] border border-[rgba(21,36,58,0.08)] bg-white px-4 py-4 text-sm leading-7 text-[var(--color-ink)]"
-                      >
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
+                  <CheckList className="mt-6" variant="card" items={section.bullets} />
                 ) : null}
               </div>
             ))}
@@ -309,17 +307,20 @@ export function ContentPageView({
           </div>
 
           <div className="grid gap-6">
-            <LeadForm title="Get A Fast Packaging Quote" />
+            <ProductQuickForm productName={page.title} title="Get a Fast Packaging Quote" />
             <div className="surface-card p-6">
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--color-muted)]">
                 Why Brands Choose Us
               </p>
-              <ul className="mt-4 grid gap-3 text-sm leading-7 text-[var(--color-ink)]">
-                <li>Low minimums for new cereal product launches</li>
-                <li>Premium retail printing and finishing options</li>
-                <li>Custom sizes, shapes, inserts, and structural guidance</li>
-                <li>Wholesale-friendly planning for repeat packaging runs</li>
-              </ul>
+              <CheckList
+                className="mt-4"
+                items={[
+                  "Low minimums for new cereal product launches",
+                  "Premium retail printing and finishing options",
+                  "Custom sizes, shapes, inserts, and structural guidance",
+                  "Wholesale-friendly planning for repeat packaging runs",
+                ]}
+              />
             </div>
           </div>
         </Container>
