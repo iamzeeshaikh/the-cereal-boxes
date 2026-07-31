@@ -86,9 +86,16 @@ export async function POST(request: Request) {
     const smtpSecure = process.env.SMTP_SECURE === "true";
     const smtpUser = process.env.SMTP_USER?.trim();
     const smtpPass = process.env.SMTP_PASS?.trim();
-    const smtpFrom =
-      process.env.SMTP_FROM_EMAIL?.trim() ||
-      (smtpUser ? `The Cereal Boxes <${smtpUser}>` : undefined);
+    // From is composed from SMTP_FROM_NAME + SMTP_FROM_EMAIL, the same shape
+    // used across the packaging sites. A pre-formatted SMTP_FROM_EMAIL
+    // ("Name <address>") still works, as does falling back to the SMTP user.
+    const fromName = process.env.SMTP_FROM_NAME?.trim() || "The Cereal Boxes";
+    const fromEmailRaw = process.env.SMTP_FROM_EMAIL?.trim() || smtpUser;
+    const smtpFrom = fromEmailRaw
+      ? fromEmailRaw.includes("<")
+        ? fromEmailRaw
+        : `"${fromName}" <${fromEmailRaw}>`
+      : undefined;
 
     if (smtpHost && smtpUser && smtpPass && smtpFrom) {
       const transporter = nodemailer.createTransport({

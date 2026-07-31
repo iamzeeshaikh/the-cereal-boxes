@@ -5,15 +5,23 @@ export type FormType = "contact" | "lead" | "quote";
 const DEFAULT_FORM_RECIPIENT = "shanzeeshan571@gmail.com";
 
 export function getFormRecipient(formType: FormType) {
+  // SMTP_TO is the shared inbox setting across the packaging sites. The older
+  // per-form recipients are kept as a fallback for deployments still using them.
   if (formType === "quote") {
     return (
+      process.env.SMTP_TO?.trim() ||
       process.env.QUOTE_FORM_RECIPIENT?.trim() ||
       process.env.FORM_RECIPIENT?.trim() ||
       DEFAULT_FORM_RECIPIENT
     );
   }
 
-  return process.env.FORM_RECIPIENT?.trim() || DEFAULT_FORM_RECIPIENT || siteConfig.email;
+  return (
+    process.env.SMTP_TO?.trim() ||
+    process.env.FORM_RECIPIENT?.trim() ||
+    DEFAULT_FORM_RECIPIENT ||
+    siteConfig.email
+  );
 }
 
 type FormPayload = Record<string, string>;
