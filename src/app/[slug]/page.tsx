@@ -70,6 +70,7 @@ export default async function DynamicContentPage({
           path: page.canonical ?? `/${page.slug}/`,
           image: page.image,
           category: "Custom cereal packaging",
+          sku: page.slug,
           additionalProperty: page.specs.map((item) => ({
             name: item.label,
             value: item.value,

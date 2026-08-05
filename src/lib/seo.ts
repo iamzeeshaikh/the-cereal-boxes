@@ -167,42 +167,85 @@ export function buildFaqSchema(faqs: Array<{ question: string; answer: string }>
   };
 }
 
+/**
+ * Per-unit wholesale price band derived from the on-site quote configurator
+ * (src/data/configurator.ts + QTY_SCALE in box-configurator.tsx):
+ * - lowPrice: cheapest build (kraft board, unprinted) at the 10,000-unit tier,
+ *   low estimate band → (0.95 - 0.18) × 0.82 × 0.88 ≈ $0.56/unit.
+ * - highPrice: premium rigid build (both-side print, gold foil, soft-touch,
+ *   window, liner) at the 100-unit tier, high estimate band ≈ $15.90/unit.
+ * - offerCount: 5 materials × 7 quantity tiers = 35 configurable offer points.
+ */
+const CONFIGURATOR_LOW_PRICE = "0.56";
+const CONFIGURATOR_HIGH_PRICE = "15.90";
+const CONFIGURATOR_OFFER_COUNT = 35;
+
 export function buildProductSchema(input: {
   name: string;
   description: string;
   path: string;
   image: string;
   category: string;
+  sku?: string;
   additionalProperty?: Array<{ name: string; value: string }>;
 }) {
+  const productUrl = new URL(input.path, siteConfig.siteUrl).toString();
+  const sku =
+    input.sku ?? input.path.replace(/\/+$/, "").split("/").filter(Boolean).pop() ?? "cereal-box";
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: input.name,
     description: input.description,
     image: [new URL(input.image, siteConfig.siteUrl).toString()],
+    sku,
     brand: {
       "@type": "Brand",
       name: siteConfig.name,
     },
     category: input.category,
-    url: new URL(input.path, siteConfig.siteUrl).toString(),
+    url: productUrl,
     manufacturer: {
       "@type": "Organization",
       name: siteConfig.name,
     },
     offers: {
-      "@type": "Offer",
-      url: new URL(input.path, siteConfig.siteUrl).toString(),
+      "@type": "AggregateOffer",
+      url: productUrl,
       priceCurrency: "USD",
-      price: "1.00",
-      priceValidUntil: "2027-12-31",
+      lowPrice: CONFIGURATOR_LOW_PRICE,
+      highPrice: CONFIGURATOR_HIGH_PRICE,
+      offerCount: CONFIGURATOR_OFFER_COUNT,
+      priceValidUntil: "2027-08-04",
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
       seller: {
         "@type": "Organization",
         name: siteConfig.name,
         url: siteConfig.siteUrl,
+      },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "US",
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: 1,
+            maxValue: 3,
+            unitCode: "DAY",
+          },
+          transitTime: {
+            "@type": "QuantitativeValue",
+            minValue: 5,
+            maxValue: 10,
+            unitCode: "DAY",
+          },
+        },
       },
       hasMerchantReturnPolicy: {
         "@type": "MerchantReturnPolicy",
