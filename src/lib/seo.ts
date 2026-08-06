@@ -189,7 +189,11 @@ export function buildProductSchema(input: {
   sku?: string;
   additionalProperty?: Array<{ name: string; value: string }>;
 }) {
-  const productUrl = new URL(input.path, siteConfig.siteUrl).toString();
+  // Canonical URLs on thecerealboxes.com never carry a trailing slash
+  // (the server 308-redirects /x/ to /x), so strip it for schema URLs.
+  const productUrl = new URL(input.path, siteConfig.siteUrl)
+    .toString()
+    .replace(/\/+$/, "");
   const sku =
     input.sku ?? input.path.replace(/\/+$/, "").split("/").filter(Boolean).pop() ?? "cereal-box";
 
@@ -225,33 +229,23 @@ export function buildProductSchema(input: {
         name: siteConfig.name,
         url: siteConfig.siteUrl,
       },
+      // Mirrors /shipping-policy: nationwide US delivery is offered, but the
+      // policy states timelines vary by project and are confirmed at quoting,
+      // so no fixed handling/transit day counts are advertised here.
       shippingDetails: {
         "@type": "OfferShippingDetails",
         shippingDestination: {
           "@type": "DefinedRegion",
           addressCountry: "US",
         },
-        deliveryTime: {
-          "@type": "ShippingDeliveryTime",
-          handlingTime: {
-            "@type": "QuantitativeValue",
-            minValue: 1,
-            maxValue: 3,
-            unitCode: "DAY",
-          },
-          transitTime: {
-            "@type": "QuantitativeValue",
-            minValue: 5,
-            maxValue: 10,
-            unitCode: "DAY",
-          },
-        },
       },
+      // Mirrors /refund-returns-policy: custom-produced packaging, returns
+      // generally not accepted after production approval.
       hasMerchantReturnPolicy: {
         "@type": "MerchantReturnPolicy",
         applicableCountry: "US",
         returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
-        url: `${siteConfig.siteUrl}/refund-returns-policy/`,
+        url: `${siteConfig.siteUrl}/refund-returns-policy`,
       },
     },
     additionalProperty: input.additionalProperty?.map((item) => ({

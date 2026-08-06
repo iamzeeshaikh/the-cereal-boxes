@@ -190,7 +190,7 @@ export default async function CityLocationPage({
               <Link key={p.slug} href={`/${p.slug}/`} className="group overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white transition-shadow hover:shadow-lg">
                 <div className="aspect-[4/3] overflow-hidden bg-[var(--color-cream)]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.image} alt={p.imageAlt} className="h-full w-full object-cover" loading="lazy" />
+                  <img src={p.image} alt={p.imageAlt} width={800} height={600} className="h-full w-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <div className="p-4">
                   <h3 className="text-base font-bold text-[var(--color-ink)]">{p.title}</h3>

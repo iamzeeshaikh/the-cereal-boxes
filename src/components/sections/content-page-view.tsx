@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { CheckList } from "@/components/ui/check-list";
 import { Container } from "@/components/ui/container";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
+import { ProductGallery } from "@/components/ui/product-gallery";
 import type { ContentPage } from "@/data/catalog";
 import { buildExpandedFaqs } from "@/data/catalog";
 
@@ -47,6 +48,9 @@ export function ContentPageView({
   const expandedFaqs = buildExpandedFaqs(page);
   const specRows = buildSpecRows(page);
   const gallery = buildGallery(page);
+  const galleryImages = gallery
+    .filter((item, index, all) => all.findIndex((other) => other.image === item.image) === index)
+    .map((item) => ({ src: item.image, alt: item.alt, label: item.label }));
   const showStartingPrice = page.kind === "product";
   const showProductEnhancements =
     page.kind === "product" || page.kind === "category" || page.kind === "service";
@@ -111,17 +115,22 @@ export function ContentPageView({
                 </div>
               </div>
 
-              <div className="surface-card overflow-hidden p-3">
-                <div className="relative aspect-[1.04/0.9] overflow-hidden rounded-[24px]">
-                  <Image
-                    src={page.image}
-                    alt={page.imageAlt}
-                    fill
-                    sizes="(min-width: 1024px) 38vw, 100vw"
-                    className="object-cover"
-                  />
+              {showProductEnhancements ? (
+                <ProductGallery images={galleryImages} productName={page.title} />
+              ) : (
+                <div className="surface-card overflow-hidden p-3">
+                  <div className="relative aspect-[1.04/0.9] overflow-hidden rounded-[24px]">
+                    <Image
+                      src={page.image}
+                      alt={page.imageAlt}
+                      fill
+                      sizes="(min-width: 1024px) 38vw, 100vw"
+                      priority
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </Container>
