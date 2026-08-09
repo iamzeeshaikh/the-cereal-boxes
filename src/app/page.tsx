@@ -22,7 +22,7 @@ import { buildFaqSchema, createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Custom Cereal Boxes In The USA | The Cereal Boxes",
   description:
-    "Premium custom cereal boxes for USA brands. Explore printed cereal packaging, blank cereal boxes, mini cereal boxes, cereal mylar bags, and wholesale cereal box solutions.",
+    "Premium custom cereal boxes for USA brands: printed cereal packaging, blank and mini cereal boxes, mylar bags and wholesale solutions.",
   path: "/",
   keywords: [
     "custom cereal boxes",

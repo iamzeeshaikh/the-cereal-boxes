@@ -156,7 +156,7 @@ export const contentPages: ContentPage[] = [
     title: "Custom Printed Cereal Boxes",
     metaTitle: "Custom Printed Cereal Boxes | Premium Retail Packaging USA",
     metaDescription:
-      "Premium custom printed cereal boxes for USA cereal brands. Choose custom sizes, vivid graphics, food packaging board grades, finishes, and low MOQ or bulk production options.",
+      "Premium custom printed cereal boxes for USA brands: custom sizes, vivid graphics, food-safe board grades, finishes, low MOQ or bulk runs.",
     heroLabel: "High-Converting Landing Page",
     intro:
       "Custom printed cereal boxes help cereal brands stand out on shelf, strengthen perceived value, and create a more polished retail presentation.",
@@ -219,7 +219,7 @@ export const contentPages: ContentPage[] = [
     title: "Custom Breakfast Cereal Boxes",
     metaTitle: "Custom Breakfast Cereal Boxes | Food Packaging For Brands",
     metaDescription:
-      "Custom breakfast cereal boxes with food packaging material options, custom sizes, high-quality printing, and production support for retail-ready cereal brands in the USA.",
+      "Custom breakfast cereal boxes: food-safe material options, custom sizes, high-quality printing and production support for USA cereal brands.",
     heroLabel: "Food Packaging Focus",
     intro:
       "Custom breakfast cereal boxes are built for cereal products that need strong shelf appeal, ingredient communication, and practical food packaging performance.",
@@ -604,7 +604,7 @@ export const contentPages: ContentPage[] = [
     title: "Cardboard Cereal Box",
     metaTitle: "Cardboard Cereal Box | Paperboard Cereal Packaging USA",
     metaDescription:
-      "Cardboard cereal box packaging with custom printing, structural guidance, and retail-ready paperboard options for cereal brands, co-packers, and private label programs.",
+      "Cardboard cereal box packaging with custom printing, structural guidance and retail-ready paperboard for brands, co-packers and private label.",
     heroLabel: "Material Intent Page",
     intro:
       "Cardboard cereal box packaging remains one of the most practical and brand-friendly formats for dry food retail products.",
@@ -655,7 +655,7 @@ export const contentPages: ContentPage[] = [
     title: "Cereal Box Dimensions Guide",
     metaTitle: "Cereal Box Dimensions Guide | Sizes, Depths, And Packaging Tips",
     metaDescription:
-      "Learn standard cereal box dimensions, mini and small cereal box sizing, 12 oz cereal box considerations, and how to choose the right custom cereal packaging dimensions.",
+      "Standard cereal box dimensions, mini and small sizing, 12 oz considerations, and how to choose the right custom cereal packaging dimensions.",
     heroLabel: "Informational Guide",
     intro:
       "Cereal box dimensions affect fill efficiency, shelf presence, freight cost, and how clearly your brand story fits on the carton.",
@@ -1269,7 +1269,7 @@ export const contentPages: ContentPage[] = [
     title: "Standard Cereal Packaging",
     metaTitle: "Standard Cereal Packaging | Retail Cartons And Bag Systems",
     metaDescription:
-      "Standard cereal packaging solutions for retail brands, private label programs, and food products including cartons, inner bags, custom print, and wholesale production support.",
+      "Standard cereal packaging for retail and private label: cartons, inner bags, custom print and wholesale production support.",
     heroLabel: "Commercial Packaging Hub",
     intro:
       "Standard cereal packaging usually combines a printed paperboard carton with an inner cereal bag, but the right system still depends on your product, dimensions, and retail goals.",
@@ -1426,7 +1426,7 @@ export const contentPages: ContentPage[] = [
     slug: "materials-finishes",
     kind: "service",
     title: "Materials And Finishes",
-    metaTitle: "Cereal Box Materials And Finishes | Paperboard, Kraft, Foil, Matte",
+    metaTitle: "Cereal Box Materials & Finishes | Paperboard, Kraft, Foil",
     metaDescription:
       "Learn about cereal box materials and finishes including SBS, kraft, cardboard, matte, gloss, soft-touch, foil, embossing, and retail-ready print treatments.",
     heroLabel: "Topical Depth Page",
@@ -1479,7 +1479,7 @@ export const contentPages: ContentPage[] = [
     title: "Industries And Uses",
     metaTitle: "Industries And Uses For Custom Cereal Boxes",
     metaDescription:
-      "See how custom cereal boxes are used by breakfast brands, private label programs, hospitality packs, school programs, promotions, and limited-edition cereal launches.",
+      "How custom cereal boxes are used by breakfast brands, private label programs, hospitality packs, promotions and limited-edition launches.",
     heroLabel: "Use Cases Page",
     intro:
       "Custom cereal packaging serves very different needs depending on whether you are selling through grocery, hospitality, school food service, direct-to-consumer bundles, or promotional campaigns.",
@@ -1530,7 +1530,7 @@ export const contentPages: ContentPage[] = [
     title: "70s Cereal Boxes Inspired Packaging",
     metaTitle: "70s Cereal Boxes Inspired Packaging | Retro Design Concepts",
     metaDescription:
-      "Explore 70s cereal boxes inspired packaging concepts with retro typography, vintage color stories, and custom cereal box design ideas created without unauthorized brand use.",
+      "70s-inspired cereal packaging: retro typography, vintage colour stories and original custom cereal box design ideas — no unauthorised brand use.",
     heroLabel: "Retro Inspiration",
     intro:
       "This page is framed as an inspiration page, not a trademarked product claim. It helps capture retro design intent while staying legally safer.",
@@ -1883,7 +1883,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "cereal-box-dimensions-guide",
-    title: "Cereal Box Dimensions Guide",
+    title: "How to Choose the Right Cereal Box Size",
     metaTitle: "Cereal Box Dimensions Guide | How To Choose The Right Size",
     metaDescription:
       "A practical guide to cereal box dimensions, standard retail ranges, mini cereal box sizing, and how to pick better custom cereal packaging dimensions.",

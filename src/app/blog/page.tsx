@@ -10,7 +10,7 @@ import { buildBreadcrumbSchema, createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Blog And Resources | The Cereal Boxes",
   description:
-    "Explore guides and resources about cereal box dimensions, materials, blank vs custom cereal boxes, mini cereal boxes, gable packaging, and breakfast packaging strategy.",
+    "Guides on cereal box dimensions, materials, blank vs custom boxes, mini cereal boxes, gable packaging and breakfast packaging strategy.",
   path: "/blog/",
 });
 

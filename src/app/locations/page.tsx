@@ -7,7 +7,7 @@ import { buildBreadcrumbSchema, createMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
   return createMetadata({
-    title: "Custom Cereal Boxes Across the USA | State & City Printing | The Cereal Boxes",
+    title: "Custom Cereal Boxes by State & City | The Cereal Boxes",
     description:
       "The Cereal Boxes prints custom, retail-ready cereal packaging for food brands across the USA — browse locations by state and city, or request a free quote.",
     path: "/locations/",

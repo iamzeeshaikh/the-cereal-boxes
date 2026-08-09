@@ -64,7 +64,9 @@ export function ProductQuickForm({
       <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--color-muted)]">
         Quick Inquiry
       </p>
-      <h3 className="mt-3 font-display text-2xl text-[var(--color-ink)] sm:text-3xl">{title}</h3>
+      {/* h2, not h3: on content pages this form is the first section under the
+          page h1, and an h3 there skips a level. */}
+      <h2 className="mt-3 font-display text-2xl text-[var(--color-ink)] sm:text-3xl">{title}</h2>
       <p className="mt-2 text-sm leading-6 text-[var(--color-muted)]">
         Tell us about {productName}
         {" — "}we&apos;ll come back with pricing within 24 hours.

@@ -8,7 +8,7 @@ import { buildBreadcrumbSchema, createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "About The Cereal Boxes | Premium Custom Packaging Company",
   description:
-    "Learn about The Cereal Boxes, a premium USA packaging company focused on custom cereal boxes, printed cereal packaging, cereal mylar bags, and wholesale cereal packaging support.",
+    "A premium USA packaging company focused on custom cereal boxes, printed cereal packaging, mylar bags and wholesale cereal packaging support.",
   path: "/about-us/",
 });
 
